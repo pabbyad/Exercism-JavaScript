@@ -4,6 +4,5 @@
 //
 
 export function hello() {
-  // this program works
   return "Hello, World!";
 }
