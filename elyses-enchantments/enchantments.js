@@ -1,7 +1,7 @@
 // @ts-check
 
 /**
- * Retrieve card from cards array at the 0-based position
+ * 1) Retrieve card from cards array at the 0-based position
  *
  * @param {number[]} cards
  * @param {number} position
@@ -13,7 +13,7 @@ export function getItem(cards, position) {
 }
 
 /**
- * Exchange card with replacementCard at the 0-based position
+ * 2) Exchange card with replacementCard at the 0-based position
  *
  * @param {number[]} cards
  * @param {number} position
@@ -27,7 +27,7 @@ export function setItem(cards, position, replacementCard) {
 }
 
 /**
- * Insert newCard at the end of the cards array
+ * 3) Insert newCard at the end of the cards array
  *
  * @param {number[]} cards
  * @param {number} newCard
@@ -36,10 +36,24 @@ export function setItem(cards, position, replacementCard) {
  */
 export function insertItemAtTop(cards, newCard) {
   cards.push(newCard);
+  return cards;
 }
 
 /**
- * Remove the card at the 0-based position
+ * 4) Insert newCard at beginning of the cards array
+ *
+ * @param {number[]} cards
+ * @param {number} newCard
+ *
+ * @returns {number[]} the cards including the new card
+ */
+ export function insertItemAtBottom(cards, newCard) {
+  cards.unshift(newCard);
+  return cards;
+}
+
+/**
+ * 5) Remove the card at the 0-based position
  *
  * @param {number[]} cards
  * @param {number} position
@@ -47,45 +61,37 @@ export function insertItemAtTop(cards, newCard) {
  * @returns {number[]} the cards without the removed card
  */
 export function removeItem(cards, position) {
-  throw new Error('Implement the removeItem function');
+  cards.splice(position, 1);
+  return cards;
 }
 
 /**
- * Remove card from the end of the cards array
+ * 6) Remove card from the end of the cards array
  *
  * @param {number[]} cards
  *
  * @returns {number[]} the cards without the removed card
  */
 export function removeItemFromTop(cards) {
-  throw new Error('Implement the removeItemFromTop function');
+  cards.pop();
+  return cards;
 }
 
-/**
- * Insert newCard at beginning of the cards array
- *
- * @param {number[]} cards
- * @param {number} newCard
- *
- * @returns {number[]} the cards including the new card
- */
-export function insertItemAtBottom(cards, newCard) {
-  throw new Error('Implement the insertItemAtBottom function');
-}
 
 /**
- * Remove card from the beginning of the cards cards
+ * 7) Remove card from the beginning of the cards cards
  *
  * @param {number[]} cards
  *
  * @returns {number[]} the cards without the removed card
  */
 export function removeItemAtBottom(cards) {
-  throw new Error('Implement the removeItemAtBottom function');
+  cards.shift();
+  return cards;
 }
 
 /**
- * Compare the number of cards with the given stackSize
+ * 8) Compare the number of cards with the given stackSize
  *
  * @param {number[]} cards
  * @param {number} stackSize
