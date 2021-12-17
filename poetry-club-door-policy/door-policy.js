@@ -40,12 +40,9 @@ export function frontDoorResponse(line) {
  * @returns {string} the front door password
  */
 export function frontDoorPassword(word) {
-  word = word + ".";
-  var wordEnd = word.slice(1, -1);
+  var wordEnd = word.slice(1);
   return word[0].toUpperCase() + wordEnd.toLowerCase();
 }
-
-
 
 
 
@@ -70,8 +67,7 @@ export function backDoorResponse(line) {
  * @returns {string} the back door password
  */
 export function backDoorPassword(word) {
-  word = word + ".";
-  var wordEnd = word.slice(1, -1);
+  var wordEnd = word.slice(1);
   return word[0].toUpperCase() + wordEnd.toLowerCase() + ", please";
 
   ;
