@@ -26,17 +26,42 @@ export function timeToMixJuice(name) {
   }
 }
 
+
 /**
  * Calculates the number of limes that need to be cut
  * to reach a certain supply.
  *
  * @param {number} wedgesNeeded
  * @param {string[]} limes
- * @returns {number} number of limes cut
+ * @returns number of limes cut or error message if invalid lime type used
  */
-export function limesToCut(wedgesNeeded, limes) {
-  throw new Error('Please implement the limesToCut function');
+
+ export function limesToCut(wedgesNeeded, limes) {
+  let limeCount = 0;
+  while (wedgesNeeded > 0) {
+    if (limes[limeCount] === undefined){
+      break;
+    }
+    switch (limes[limeCount]) {
+      case 'small':
+        wedgesNeeded -= 6;
+        break;
+      case 'medium':
+        wedgesNeeded -= 8;
+        break;
+      case 'large':
+        wedgesNeeded -= 10;
+        break;
+      default:
+        return 'Lime type not recognized, please use only "small", "medium", or "large" limes.';
+        break;
+    }
+    
+    limeCount += 1;
+  }
+return limeCount;
 }
+
 
 /**
  * Determines which juices still need to be prepared after the end of the shift.
@@ -45,6 +70,34 @@ export function limesToCut(wedgesNeeded, limes) {
  * @param {string[]} orders
  * @returns {string[]} remaining orders after the time is up
  */
+
+
 export function remainingOrders(timeLeft, orders) {
-  throw new Error('Please implement the remainingOrders function');
+  let orderNumber = 0;
+  while (timeLeft > 0){
+    if (orders[orderNumber] === undefined){
+      break;
+    }
+    switch (orders[orderNumber]) {
+      case 'Pure Strawberry Joy':
+        timeLeft -= 0.5;
+        break;
+      case 'Energizer':
+      case 'Green Garden':
+        timeLeft -= 1.5;
+        break;
+      case 'Tropical Island':
+        timeLeft -= 3;
+        break;
+      case 'All or Nothing':
+        timeLeft -= 5;
+        break;
+      default:
+        timeLeft -= 2.5;
+        break;
+    }
+    orderNumber += 1;
+  }
+orders.splice(0, orderNumber);
+return orders;
 }
