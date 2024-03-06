@@ -7,14 +7,8 @@ export function isLeap(input) {
   let isLeapYear = false;
   let year = input;
   
-  if (year % 4 === 0) {
-    if (year % 100 === 0) {
-      if (year % 400 === 0) {
+  if ((year % 4 === 0) && (year % 100 !== 0 || year % 400 === 0)) {
         isLeapYear = true;
-      }
-    } else {
-      isLeapYear = true;
-      }
   }
 
 return isLeapYear;
