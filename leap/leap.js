@@ -4,5 +4,28 @@
 //
 
 export const isLeap = () => {
-  throw new Error('Remove this statement and implement this function');
+  let isLeapYear = false;
+  let year = input;
+  
+  if (year % 4 === 0) {
+    if (year % 100 ==== 0) {
+      if (year % 400 ===) {
+        isLeapYear = true;
+      }
+    } else {
+      isLeapYear = true;
+    }
+  //then yesleapyearmaybe
+  
+     //if year % 100 = 0
+     //then if year % 400
+         //then isLeapYear = true;
+         //else isLeapYear = false (no action);
+     //else isLeepyear = true;
+  
+  //else no action (still not leap year)
+}
+
+return isLeapYear;
+
 };
