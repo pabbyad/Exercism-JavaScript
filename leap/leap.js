@@ -16,6 +16,6 @@ export function isLeap(input) {
       isLeapYear = true;
       }
   }
-return isLeapYear;
 
+return isLeapYear;
 };
