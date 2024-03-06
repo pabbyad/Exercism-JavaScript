@@ -3,9 +3,8 @@
 // convenience to get you started writing code faster.
 //
 
-export function isLeap(input) {
+export const isLeap = (year) => {
   let isLeapYear = false;
-  let year = input;
   
   if ((year % 4 === 0) && (year % 100 !== 0 || year % 400 === 0)) {
         isLeapYear = true;
